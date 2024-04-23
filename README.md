@@ -7,7 +7,7 @@ Meaning if you have a function named `click` it will get called when a user clic
 `npm i @enhance/event-handler-mixin`
 
 ## Usage
-Add an attribute with a valid event name and a function of the same name and in it will get called when a user triggers that event.
+Add an attribute with a valid event name ( i.e. "click" ) to your custom element markup then and a function of the same name in your Web Component class and it will get called when a user interaction triggers the event.
 
 ```html
 <my-component click></my-component>
@@ -35,7 +35,7 @@ class MyComponent extends EventHandlerMixin(CustomElement) {
 ```
 
 ## Advanced Usage
-Add an attribute with a valid event name and give it a value of the child element to target and the event handler will get called when a user triggers the event on the target child element.
+Add an attribute with a valid event name and give it a value of the child element to target and the event handler will get called when a user interaction triggers the event on the target child element.
 
 ```html
 <my-component blur="input[type='email']" click="button"></my-component>
