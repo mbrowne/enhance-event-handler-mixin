@@ -1,7 +1,17 @@
+import { bindEvents } from "./utils.mjs"
+
 const EventHandlerMixin = (superclass) => class extends superclass {
   constructor() {
     super()
     this.eventsToRemove = []
+  }
+
+  /**
+   * Bind event handlers to this component
+   * @param {object} events 
+   */
+  bindEvents(events) {
+    bindEvents(this, events)
   }
 
   connectedCallback() {
@@ -40,4 +50,4 @@ const EventHandlerMixin = (superclass) => class extends superclass {
 }
 
 export default EventHandlerMixin
-
+export { bindEvents }
